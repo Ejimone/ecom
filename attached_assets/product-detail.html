@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail | E-Sure</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://img.icons8.com/fluency/96/shopping-bag.png" alt="E-Sure Logo">
+                E-Sure
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section id="product-detail">
+        <div class="container">
+            <div class="product-detail-container">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="product-main-image" src="" alt="Product Image">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h1 id="product-name"></h1>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(24 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span id="product-price"></span>
+                    </div>
+                    <div class="product-description">
+                        <p id="product-description"></p>
+                    </div>
+                    <div class="product-meta">
+                        <p><strong>Category:</strong> <span id="product-category"></span></p>
+                        <p><strong>Availability:</strong> <span class="in-stock">In Stock</span></p>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn decrease">-</button>
+                            <input type="number" id="product-quantity" value="1" min="1" max="10">
+                            <button class="quantity-btn increase">+</button>
+                        </div>
+                        <button id="add-to-cart" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-tabs">
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specifications">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+                <div class="tab-content">
+                    <div id="description" class="tab-pane active">
+                        <p id="full-description"></p>
+                    </div>
+                    <div id="specifications" class="tab-pane">
+                        <table class="specs-table">
+                            <tbody id="specs-body">
+                                <!-- Specifications will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="reviews" class="tab-pane">
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <h3>4.5</h3>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Based on 24 reviews</p>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <span>5 stars</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 70%;"></div>
+                                    </div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 stars</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 20%;"></div>
+                                    </div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 stars</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 5%;"></div>
+                                    </div>
+                                    <span>5%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 stars</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 3%;"></div>
+                                    </div>
+                                    <span>3%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 star</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 2%;"></div>
+                                    </div>
+                                    <span>2%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-list" id="reviews-container">
+                            <!-- Reviews will be loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-products">
+                <h2>Related Products</h2>
+                <div class="products-container" id="related-products-container">
+                    <!-- Related products will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>E-Sure</h3>
+                <p>Your one-stop destination for all your shopping needs with the best prices and quality products.</p>
+                <div class="social-links" style="margin-top: 1rem;">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Account</h3>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="#">My Orders</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> OpenCode Headquaters</li>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> opencodehq@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 OpenCode.Hq. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
